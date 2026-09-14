@@ -6,9 +6,12 @@ from datetime import datetime
 # SETTINGS
 # ==========================
 
-TARGET_TIME = "05:01" \
-    ""   # ⏰ Change this to HH:MM format
+TARGET_TIME = "05:01"   # ⏰ Change this to HH:MM format
 MESSAGE = "Continue"
+
+# ⚠️ Replace with the coordinates of Claude's input box on your screen
+CLAUDE_INPUT_X = 1350
+CLAUDE_INPUT_Y = 898
 
 # ==========================
 # WAIT UNTIL TARGET TIME
@@ -16,10 +19,7 @@ MESSAGE = "Continue"
 
 print(f"Waiting until {TARGET_TIME}...")
 
-while True:
-    current_time = datetime.now().strftime("%H:%M")
-    if current_time == TARGET_TIME:
-        break
+while datetime.now().strftime("%H:%M") < TARGET_TIME:
     time.sleep(10)
 
 print("Target time reached!")

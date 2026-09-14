@@ -28,11 +28,10 @@ print("Target time reached!")
 # SEND MESSAGE TO CLAUDE
 # ==========================
 
-# ⚠️ Replace (x, y) with the coordinates of Claude’s input box
-pyautogui.click(1350, 898)    # Example coordinates
+pyautogui.click(CLAUDE_INPUT_X, CLAUDE_INPUT_Y)
 time.sleep(1)
 
-pyautogui.write("Continue", interval=0.1)
+pyautogui.write(MESSAGE, interval=0.1)
 pyautogui.press("enter")
 
 print("Message sent to Claude.")
